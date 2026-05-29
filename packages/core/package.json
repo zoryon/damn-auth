@@ -1,0 +1,72 @@
+{
+  "name": "@damn-auth/core",
+  "version": "0.1.0",
+  "description": "Core authentication primitives for Damn Auth.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./crypto": {
+      "types": "./dist/crypto.d.ts",
+      "import": "./dist/crypto.js",
+      "require": "./dist/crypto.cjs"
+    },
+    "./oauth": {
+      "types": "./dist/oauth.d.ts",
+      "import": "./dist/oauth.js",
+      "require": "./dist/oauth.cjs"
+    },
+    "./session": {
+      "types": "./dist/session.d.ts",
+      "import": "./dist/session.js",
+      "require": "./dist/session.cjs"
+    },
+    "./middleware/express": {
+      "types": "./dist/middleware/express.d.ts",
+      "import": "./dist/middleware/express.js",
+      "require": "./dist/middleware/express.cjs"
+    },
+    "./middleware/next": {
+      "types": "./dist/middleware/next.d.ts",
+      "import": "./dist/middleware/next.js",
+      "require": "./dist/middleware/next.cjs"
+    },
+    "./middleware/remix": {
+      "types": "./dist/middleware/remix.d.ts",
+      "import": "./dist/middleware/remix.js",
+      "require": "./dist/middleware/remix.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "lint": "tsc --noEmit",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@damn-auth/logger": "workspace:*",
+    "bcryptjs": "^2.4.3",
+    "jose": "^5.9.6",
+    "zod": "^3.24.1"
+  },
+  "optionalDependencies": {
+    "argon2": "^0.41.1"
+  },
+  "peerDependenciesMeta": {
+    "argon2": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
+    "rimraf": "^6.0.1"
+  }
+}

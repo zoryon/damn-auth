@@ -1,0 +1,13 @@
+// Copy these models into your application schema, then run your normal Prisma migration.
+// You may rename database tables with @@map/@map as long as the Prisma field names stay compatible.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// See the exported `prismaSchema` constant for the full snippet.

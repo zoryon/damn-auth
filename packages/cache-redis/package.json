@@ -1,0 +1,41 @@
+{
+  "name": "@damn-auth/cache-redis",
+  "version": "0.1.0",
+  "description": "Redis cache adapter for Damn Auth.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "lint": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@damn-auth/core": "workspace:*",
+    "ioredis": "^5.4.2",
+    "redis": "^4.7.0"
+  },
+  "peerDependenciesMeta": {
+    "ioredis": {
+      "optional": true
+    },
+    "redis": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@damn-auth/core": "workspace:*",
+    "rimraf": "^6.0.1"
+  }
+}
